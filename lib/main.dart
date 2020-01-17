@@ -1,6 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+import 'package:sms/sms.dart';
+
+//my own packages
+import 'package:efarming_app/components/horizontal_list_view.dart';
+import 'package:efarming_app/components/products.dart';
+
 void main(){
+  SmsQuery query = new SmsQuery();
   runApp(
     MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -36,7 +43,7 @@ class _HomePageState extends State<HomePage> {
     );
     return Scaffold(
       appBar: new AppBar(
-        elevation: 0.0,
+        elevation: 20.0,
         title: Text('AgriCart'),
         actions: <Widget>[
           new IconButton(icon: Icon(Icons.search, color: Colors.white), onPressed: (){}),
@@ -119,7 +126,21 @@ class _HomePageState extends State<HomePage> {
       ),
       body: ListView(
         children: <Widget>[
-          image_carousel
+          image_carousel,
+          new Padding(padding: const EdgeInsets.all(8.0),
+          child: new Text('Categories', style: TextStyle(fontSize: 20.0),)),
+          Divider(),
+
+          //Horizontal List View starts from here
+          HorizontalListView(),
+          Divider(),
+          new Padding(padding: const EdgeInsets.fromLTRB(8.0, 10.0, 20.0, 20.0),
+              child: new Text('Recent Products', style: TextStyle(fontSize: 20.0),)),
+
+          Container(
+            height: 320.0,
+            child: Products(),
+          ),
         ],
       ),
     );

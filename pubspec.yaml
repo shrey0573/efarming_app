@@ -29,6 +29,8 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  sms: ^0.2.0
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -49,6 +51,11 @@ flutter:
     - images/c1.jpg
     - images/IMG_1266.JPG
     - images/m1.jpeg
+    - images/cats/cow.png
+    - images/cats/crop.png
+    - images/cats/hen.png
+    - images/products/c1.jpg
+    - images/products/c2.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
