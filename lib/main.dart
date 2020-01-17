@@ -1,13 +1,13 @@
+import 'package:efarming_app/pages/product_details.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-import 'package:sms/sms.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 //my own packages
 import 'package:efarming_app/components/horizontal_list_view.dart';
 import 'package:efarming_app/components/products.dart';
 
 void main(){
-  SmsQuery query = new SmsQuery();
   runApp(
     MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -36,6 +36,7 @@ class _HomePageState extends State<HomePage> {
         autoplay: true,
 
         dotSize: 4.0,
+        dotBgColor: Colors.transparent,
         indicatorBgPadding: 4.0,
         animationCurve: Curves.fastOutSlowIn,
         animationDuration: Duration(milliseconds: 1000),

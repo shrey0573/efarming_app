@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:efarming_app/pages/product_details.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Products extends StatefulWidget {
   @override
@@ -14,13 +15,15 @@ class _ProductsState extends State<Products> {
       "contact": '+919999999990',
       "picture": "images/products/c1.jpg",
       "price": "50₹/Kg",
+      "address": "Hatpipliya"
     },
     {
       "name": "Pyaaj",
       "farmer": 'Nandkishor2',
-    "contact": '+919999999991',
+      "contact": '+919999999991',
       "picture": "images/products/c2.jpg",
       "price": "120₹/Kg",
+      "address": "Narwar"
     },
   ];
   @override
@@ -36,7 +39,7 @@ class _ProductsState extends State<Products> {
             prod_price: products_list[index]['price'],
             prod_farmer_name: products_list[index]['farmer'],
             prod_farmer_contact: products_list[index]['contact'],
-            prod_address: products_list[index]['address'],
+            prod_farmer_address: products_list[index]['address'],
           );
         }
         );
@@ -68,6 +71,9 @@ class Single_prod extends StatelessWidget {
                 product_details_name: prod_name,
                 product_details_picture: prod_picture,
                 product_details_price: prod_price,
+                product_farmer_name: prod_farmer_name,
+                product_farmer_address: prod_farmer_address,
+                product_farmer_contact: prod_farmer_contact,
               ))),
           child: GridTile(
             footer: Container(

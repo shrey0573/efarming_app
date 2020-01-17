@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:url_launcher/url_launcher.dart' as UrlLauncher;
 
 class ProductDetails extends StatefulWidget {
+
   final product_details_name;
   final product_details_picture;
   final product_details_price;
@@ -22,6 +24,7 @@ class ProductDetails extends StatefulWidget {
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,11 +126,22 @@ class _ProductDetailsState extends State<ProductDetails> {
           ),
           Divider(color: Colors.black87,),
           new ListTile(
+            leading: new IconButton(icon: Icon(Icons.person, size: 35.0, color: Colors.green,), onPressed: null),
+            title: Text('${widget.product_farmer_name}', style: TextStyle(fontSize: 20.0),),
+            subtitle: Text('Address: ${widget.product_farmer_address}'),
+            trailing: new IconButton(icon: Icon(Icons.call, color: Color(0xFF388E3C),), onPressed: ()=>
+                UrlLauncher.launch('tel:+${widget.product_farmer_contact.toString()}')),
+          ),
+          Divider(color: Colors.black87,),
+          new ListTile(
             title: Text('Product Details', style: TextStyle(fontSize: 20.0),),
-            subtitle: Text('This is the finest quality of wheat ever produced. Grown in the fertile lands of Madhya Pradesh, these grains will nourish your body like never before.', style: TextStyle(fontSize: 15.0),),
-          )
+            subtitle: Text(
+              'This is the finest quality of wheat ever produced. Grown in the fertile lands of Madhya Pradesh, these grains will nourish your body like never before.',style: TextStyle(fontSize: 15.0),
+            ),
+          ),
         ],
       ),
     );
   }
+
 }
