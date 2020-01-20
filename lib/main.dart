@@ -6,6 +6,7 @@ import 'package:url_launcher/url_launcher.dart';
 //my own packages
 import 'package:efarming_app/components/horizontal_list_view.dart';
 import 'package:efarming_app/components/products.dart';
+import 'package:efarming_app/pages/cart.dart';
 
 void main(){
   runApp(
@@ -29,9 +30,9 @@ class _HomePageState extends State<HomePage> {
       child: new Carousel(
         boxFit: BoxFit.cover,
         images: [
-          AssetImage('images/c1.jpg'),
-          AssetImage('images/m1.jpeg'),
-          AssetImage('images/IMG_1266.JPG')
+          AssetImage('images/m4.jpg'),
+          AssetImage('images/m3.jpg'),
+          AssetImage('images/c21.jpg'),
         ],
         autoplay: true,
 
@@ -48,7 +49,9 @@ class _HomePageState extends State<HomePage> {
         title: Text('AgriCart'),
         actions: <Widget>[
           new IconButton(icon: Icon(Icons.search, color: Colors.white), onPressed: (){}),
-          new IconButton(icon: Icon(Icons.shopping_cart, color: Colors.white), onPressed: (){})
+          new IconButton(icon: Icon(Icons.shopping_cart, color: Colors.white), onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => new Cart()));
+          })
         ],
         backgroundColor: Color(0xFF388E3C),
       ),
@@ -98,25 +101,22 @@ class _HomePageState extends State<HomePage> {
                 ),
 
                 InkWell(
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => new Cart()));
+                    },
                     child: ListTile(
-                        title: Text('Categories'),
-                        leading: Icon(Icons.dashboard, color: Color(0xFF388E3C),)
+                        title: Text('My Shopping Cart'),
+                        leading: Icon(Icons.shopping_cart, color: Color(0xFF388E3C),)
                     )
                 ),
 
                 Divider(),
 
+                
                 InkWell(
-                    onTap: (){},
-                    child: ListTile(
-                        title: Text('Settings'),
-                        leading: Icon(Icons.settings, color: Color(0xFF388E3C),)
-                    )
-                ),
+                    onTap: (){
 
-                InkWell(
-                    onTap: (){},
+                    },
                     child: ListTile(
                         title: Text('About'),
                         leading: Icon(Icons.help, color: Color(0xFF388E3C),)
